@@ -1,0 +1,1 @@
+<img src="{{ asset('images/logo-yonetwork.png') }}" {{ $attributes }} alt="YONETWORK Logo">

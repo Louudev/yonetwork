@@ -95,43 +95,12 @@
                         </div>
                     @endif
 
-                    <!-- Bouton temporaire pour diagnostic (à enlever après débogage) -->
-                    <div class="fixed bottom-4 right-4 z-40">
-                        <button 
-                            id="debugBtn" 
-                            class="bg-green-900 hover:bg-green-900 text-white font-semibold py-2 px-4 rounded"
-
-                            onclick="debugOrderStructure()"
-                        >
-                            Diagnostiquer
-                        </button>
+                   
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        // Fonction de diagnostic temporaire
-        function debugOrderStructure() {
-            // Récupérer la première commande pour analyse
-            fetch('/api/debug/order-structure', {
-                headers: {
-                    'Accept': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest'
-                },
-                credentials: 'same-origin'
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('===== DIAGNOSTIC DES COMMANDES =====');
-                console.log('Structure de la commande:', data);
-                alert('Diagnostic terminé. Consultez la console pour les détails.');
-            })
-            .catch(error => {
-                console.error('Erreur de diagnostic:', error);
-                alert('Erreur lors du diagnostic: ' + error.message);
-            });
-        }
-    </script>
+   
 </x-app-layout> 
